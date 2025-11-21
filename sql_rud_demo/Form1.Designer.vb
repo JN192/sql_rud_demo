@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ButtonConnect = New System.Windows.Forms.Button()
         Me.lblName = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
@@ -30,11 +31,16 @@ Partial Class Form1
         Me.lblAge = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.btnCreate = New System.Windows.Forms.Button()
+        Me.btmRead = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtHiddenId = New System.Windows.Forms.TextBox()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonConnect
         '
-        Me.ButtonConnect.Location = New System.Drawing.Point(151, 119)
+        Me.ButtonConnect.Location = New System.Drawing.Point(151, 25)
         Me.ButtonConnect.Name = "ButtonConnect"
         Me.ButtonConnect.Size = New System.Drawing.Size(122, 51)
         Me.ButtonConnect.TabIndex = 0
@@ -44,7 +50,7 @@ Partial Class Form1
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(112, 201)
+        Me.lblName.Location = New System.Drawing.Point(116, 85)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(35, 13)
         Me.lblName.TabIndex = 1
@@ -52,21 +58,21 @@ Partial Class Form1
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(157, 194)
+        Me.txtName.Location = New System.Drawing.Point(157, 82)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(100, 20)
         Me.txtName.TabIndex = 2
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(157, 278)
+        Me.txtEmail.Location = New System.Drawing.Point(157, 155)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(100, 20)
         Me.txtEmail.TabIndex = 3
         '
         'txtAge
         '
-        Me.txtAge.Location = New System.Drawing.Point(157, 231)
+        Me.txtAge.Location = New System.Drawing.Point(157, 118)
         Me.txtAge.Name = "txtAge"
         Me.txtAge.Size = New System.Drawing.Size(100, 20)
         Me.txtAge.TabIndex = 4
@@ -74,7 +80,7 @@ Partial Class Form1
         'lblAge
         '
         Me.lblAge.AutoSize = True
-        Me.lblAge.Location = New System.Drawing.Point(112, 238)
+        Me.lblAge.Location = New System.Drawing.Point(112, 125)
         Me.lblAge.Name = "lblAge"
         Me.lblAge.Size = New System.Drawing.Size(26, 13)
         Me.lblAge.TabIndex = 5
@@ -83,7 +89,7 @@ Partial Class Form1
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(112, 285)
+        Me.lblEmail.Location = New System.Drawing.Point(112, 162)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(32, 13)
         Me.lblEmail.TabIndex = 6
@@ -91,12 +97,37 @@ Partial Class Form1
         '
         'btnCreate
         '
-        Me.btnCreate.Location = New System.Drawing.Point(151, 315)
+        Me.btnCreate.Location = New System.Drawing.Point(151, 181)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(122, 51)
         Me.btnCreate.TabIndex = 7
         Me.btnCreate.Text = "Create"
         Me.btnCreate.UseVisualStyleBackColor = True
+        '
+        'btmRead
+        '
+        Me.btmRead.Location = New System.Drawing.Point(151, 238)
+        Me.btmRead.Name = "btmRead"
+        Me.btmRead.Size = New System.Drawing.Size(122, 51)
+        Me.btmRead.TabIndex = 8
+        Me.btmRead.Text = "Read"
+        Me.btmRead.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 295)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(731, 150)
+        Me.DataGridView1.TabIndex = 9
+        '
+        'txtHiddenId
+        '
+        Me.txtHiddenId.Location = New System.Drawing.Point(318, 85)
+        Me.txtHiddenId.Name = "txtHiddenId"
+        Me.txtHiddenId.Size = New System.Drawing.Size(100, 20)
+        Me.txtHiddenId.TabIndex = 10
+        Me.txtHiddenId.Visible = False
         '
         'Form1
         '
@@ -104,6 +135,9 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txtHiddenId)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btmRead)
         Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.lblAge)
@@ -114,6 +148,7 @@ Partial Class Form1
         Me.Controls.Add(Me.ButtonConnect)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -127,4 +162,8 @@ Partial Class Form1
     Friend WithEvents lblAge As Label
     Friend WithEvents lblEmail As Label
     Friend WithEvents btnCreate As Button
+    Friend WithEvents btmRead As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents txtHiddenId As TextBox
 End Class

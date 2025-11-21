@@ -44,4 +44,33 @@ Public Class Form1
         End Try
 
     End Sub
+
+    Private Sub btmRead_Click(sender As Object, e As EventArgs) Handles btmRead.Click
+        Dim query As String = "SELECT * FROM `crud_demo.db`.students_tbl;"
+        Try
+            Using conn As New MySqlConnection("server = localhost; userid=root; password=root; database=crud_demo.db;")
+                Dim adapter As New MySqlDataAdapter(query, conn)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                DataGridView1.DataSource = table
+                DataGridView1.Columns("id").Visible = False
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim selectRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            txtName.Text = selectRow.Cells("name").Value.ToString()
+            txtAge.Text = selectRow.Cells("age").Value.ToString()
+            txtEmail.Text = selectRow.Cells("email").Value.ToString()
+            txtHiddenId.Text = selectRow.Cells("id").Value.ToString()
+        End If
+
+    End Sub
+
 End Class
