@@ -62,7 +62,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
         If e.RowIndex >= 0 Then
             Dim selectRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
             txtName.Text = selectRow.Cells("name").Value.ToString()
@@ -73,4 +73,17 @@ Public Class Form1
 
     End Sub
 
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Dim query As String = "UPDATE `crud_demo_db`.`students_tbl` 
+                                SET `age` = @age,
+                                    `name` = @name,
+                                    `email` = @email 
+                                     WHERE (`id` = 'id');"
+
+
+
+
+
+    End Sub
 End Class
+
