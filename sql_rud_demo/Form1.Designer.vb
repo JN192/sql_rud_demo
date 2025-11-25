@@ -36,6 +36,7 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.txtHiddenId = New System.Windows.Forms.TextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -140,12 +141,22 @@ Partial Class Form1
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(322, 238)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(122, 51)
+        Me.btnDelete.TabIndex = 12
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkRed
         Me.ClientSize = New System.Drawing.Size(709, 450)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.txtHiddenId)
         Me.Controls.Add(Me.DataGridView1)
@@ -179,4 +190,5 @@ Partial Class Form1
     Friend WithEvents Timer1 As Timer
     Friend WithEvents txtHiddenId As TextBox
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnDelete As Button
 End Class
